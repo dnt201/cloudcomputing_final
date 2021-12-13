@@ -1,6 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Đầu tiên, chúng ta cần settup biến môi trường trong file .env:
+```bash
+NEXT_PUBLIC_AWS_ACCESS_KEY_ID= "Your-access-key-id"
+NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY= "Your-secret-access-key"
+NEXT_PUBLIC_AWS_SESSION_TOKEN = "Your-session-token"
+```
+
+
+--------------------- Run with local host ---------------------
 
 First, run the development server:
 
