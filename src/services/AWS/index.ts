@@ -1,5 +1,5 @@
 import * as AWSpro from "@aws-sdk/client-textract";
-
+import {useState} from "react"
 import AWS from "aws-sdk";
 import { ITranslateTextPayload } from "./interface";
 import { decode } from "base64-arraybuffer";
@@ -18,17 +18,20 @@ AWS.config.region = "us-east-1";
 //AKIAS7PNU27UDS4IMPU5
 //l/48aIWo9Vc2ZPPaELdjToMhT907h1MpaRtIl5Dt
 // });
+
+console.log(process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,"bbbbb",process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,"aaaa",process.env.NEXT_PUBLIC_AWS_SESSION_TOKEN)
+
+process.env.AWS_SDK_LOAD_CONFIG = "true";
+
 const awsCof ={
   region: "us-east-1",
   credentials: {
-    accessKeyId: "ASIAZQXWA5Z5M7FOKNA6",
-    secretAccessKey: "pmHlLPJ4GJowL5H9RS5doIVCtyqDppTpTzmf0UN8",
-    sessionToken:"FwoGZXIvYXdzEG4aDN/hAqZeh7lwYY5fsCLPAeKTfuGHuu9ueToUKmznOA3/qF3YrInbET6ajuPzER9/g563XZpTUFCUtmQa+EO+Yv0WGfC6Ii7KKkIjxey6NUMBLNKFyid/lrzsx3zoMfMpS/SHseH8R+SmIoUH69sSPHhOKH23uiNn8HLmRPZi5GI/MFaJ4kkCt4COlNxttnOlKR9r/rDD0hEQECz44+9esZ6haY1c38XK4ChmlaDoBT6nSwyN9BJeLjL4IlPlAVQS7llyt2lbpwR6BPWlfqKgMHwtaodcDhJCFNNb7EkXbSiN9NyNBjItdLeFOBis19dwAWUeFHnpBO6UKeATM4BW2EdnI/InyWyyAQgBLSNsn8+rS9PN",
+    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID as string,
+    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY as string,
+    sessionToken:process.env.NEXT_PUBLIC_AWS_SESSION_TOKEN,
   },
 }
-
-console.log(process.env.AWS_NEXT_JS_accessKeyId,process.env.AWS_NEXT_JS_secretAccessKey, process.env.AWS_NEXT_JS_sessionToken)
-
+console.log(process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,"bbbbb",process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,"aaaa",process.env.NEXT_PUBLIC_AWS_SESSION_TOKEN)
 const AWSTranslate = (function () {
 
   const translate = new AWS.Translate(awsCof);
