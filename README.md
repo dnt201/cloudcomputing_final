@@ -7,7 +7,6 @@ NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY= "Your-secret-access-key"
 NEXT_PUBLIC_AWS_SESSION_TOKEN = "Your-session-token"
 ```
 
-
 --------------------- Run with local host ---------------------
 
 First, run the development server:
@@ -16,6 +15,17 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
+```
+
+--------------------- Để build sản phẩm ---------------------
+```bash
+npm run build
+# or
+yarn build
+```
+
+```bash
+File after build maybe is .next
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
