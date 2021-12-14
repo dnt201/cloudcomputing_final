@@ -91,7 +91,7 @@ const LinkPage: FC<ILinkPage> = () => {
 
       let doc = new DOMParser().parseFromString(data, "text/html");
 
-      let styleCus=document.createElement("style");
+      let styleCus=document.createElement("p");
       styleCus.innerHTML= `
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
