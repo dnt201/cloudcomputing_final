@@ -1,27 +1,9 @@
-import * as AWSpro from "@aws-sdk/client-textract";
-import {useState} from "react"
 import AWS from "aws-sdk";
+import * as AWSpro from "@aws-sdk/client-textract";
 import { ITranslateTextPayload } from "./interface";
-import { decode } from "base64-arraybuffer";
-
-
 import {
-  AnalyzeDocumentCommand,
   AnalyzeDocumentCommandInput,
 } from "@aws-sdk/client-textract";
-import { stringMap } from "aws-sdk/clients/backup";
-import { env } from "process";
-
-AWS.config.region = "us-east-1";
-// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-//   IdentityPoolId: "us-east-1:e8ecc73b-676d-46f8-89ba-e957866f07e6",
-//AKIAS7PNU27UDS4IMPU5
-//l/48aIWo9Vc2ZPPaELdjToMhT907h1MpaRtIl5Dt
-// });
-
-console.log(process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,"bbbbb",process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,"aaaa",process.env.NEXT_PUBLIC_AWS_SESSION_TOKEN)
-
-process.env.AWS_SDK_LOAD_CONFIG = "true";
 
 const awsCof ={
   region: "us-east-1",
@@ -31,7 +13,6 @@ const awsCof ={
     sessionToken:process.env.NEXT_PUBLIC_AWS_SESSION_TOKEN,
   },
 }
-console.log(process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,"bbbbb",process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,"aaaa",process.env.NEXT_PUBLIC_AWS_SESSION_TOKEN)
 const AWSTranslate = (function () {
 
   const translate = new AWS.Translate(awsCof);
